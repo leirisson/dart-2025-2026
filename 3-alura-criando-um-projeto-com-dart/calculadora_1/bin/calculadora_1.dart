@@ -2,11 +2,44 @@ import 'dart:io';
 
 void main() {
   print("Informe o primeiro valor: ");
-  double numero1 = double.parse(stdin.readLineSync()!);
+  double numeroUm = double.parse(stdin.readLineSync()!);
   print("informe o segundo valor: ");
-  double numero2 = double.parse(stdin.readLineSync()!);
+  double numerodois = double.parse(stdin.readLineSync()!);
 
-  var soma = (numero1 + numero2);
 
-  print("A soma de $numero1 + $numero2 = $soma");
+ void soma(){
+  print(numeroUm + numerodois);
+ }
+
+ void subtracao(){
+  print(numeroUm - numerodois);
+ }
+
+ void divisao(){
+  print(numeroUm / numerodois);
+ }
+
+ void mutiplicacao(){
+  print(numeroUm * numerodois);
+ }
+
+ print("Escolha uma opção: ");
+ print("1. soma");
+ print("2. subtrção");
+ print("3. divisão");
+ print("4. muitiplicação");
+
+ String operacao = stdin.readLineSync()!;
+
+ switch(operacao){
+  case "1":
+    soma();
+  case "2":
+    subtracao();
+  case "3":
+    divisao();
+  case "4":
+    mutiplicacao();
+ }
+
 }
