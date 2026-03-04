@@ -376,6 +376,34 @@ main { max-width: 1100px; margin: 0 auto; padding: 40px; }
 
 .ex-card.done .btn-done::before { content: '✓ '; }
 
+/* Content sections */
+.content-block {
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+.content-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+.content-sub {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.content-list {
+  padding-left: 18px;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+.content-list li { margin-bottom: 8px; }
+.content-block .ex-title { margin-top: 10px; }
+.content-block .ex-code { margin-top: 8px; }
+
 @media (max-width: 600px) {
   header, main, .tabs { padding-left: 20px; padding-right: 20px; }
   .progress-section { padding: 16px 20px; }
@@ -418,6 +446,60 @@ main { max-width: 1100px; margin: 0 auto; padding: 40px; }
 </div>
 
 <main id="main-content">
+
+<section id="conceitos" class="content-block">
+  <div class="content-title">Conceitos‑Chave de Dart</div>
+  <div class="content-sub">Resumo objetivo para guiar a prática</div>
+  <ul class="content-list">
+    <li><strong>Variáveis e tipos</strong>: <em>var</em> infere tipo, <em>final</em> é imutável após atribuição, <em>const</em> é imutável em tempo de compilação.</li>
+    <li><strong>Null safety</strong>: <em>?</em> permite nulo, <em>!</em> afirma não‑nulo, <em>??</em> fornece padrão, <em>?.</em> acesso seguro.</li>
+    <li><strong>Funções</strong>: parâmetros nomeados com valores padrão, funções de seta com <em>=&gt;</em>, closures capturam escopo.</li>
+    <li><strong>Coleções</strong>: <em>List</em>, <em>Set</em>, <em>Map</em>; operações <em>map</em>, <em>where</em>, <em>reduce</em>; spreads <em>...</em> e condicionais.</li>
+    <li><strong>Controle de fluxo</strong>: <em>if/else</em>, <em>switch</em>, <em>for</em>, <em>while</em>, <em>for‑in</em>.</li>
+    <li><strong>Classes</strong>: construtores, <em>factory</em>, getters/setters, <em>toString</em>; imutabilidade com <em>final</em>.</li>
+    <li><strong>Herança e contratos</strong>: <em>extends</em> herda, <em>implements</em> cumpre interface, <em>with</em> usa mixins, <em>override</em> personaliza.</li>
+    <li><strong>Genéricos</strong>: tipos parametrizados como <em>List&lt;T&gt;</em> melhoram segurança e reuso.</li>
+    <li><strong>Assíncrono</strong>: <em>Future</em>, <em>async/await</em>, <em>try/catch</em> para erros; <em>Stream</em> para eventos contínuos.</li>
+  </ul>
+</section>
+
+<section id="exemplos" class="content-block">
+  <div class="content-title">Exemplos Rápidos</div>
+  <div class="content-sub">Padrões recorrentes que você usará nos exercícios</div>
+
+  <div class="ex-title">Funções com parâmetros nomeados</div>
+  <div class="ex-code">int soma({required int a, int b = 0}) =&gt; a + b;
+final r = soma(a: 10, b: 5);</div>
+
+  <div class="ex-title">Null safety com valor padrão</div>
+  <div class="ex-code">String? nome;
+final safe = (nome ?? 'Indefinido').toUpperCase();</div>
+
+  <div class="ex-title">Coleções com where/map</div>
+  <div class="ex-code">final nums = [1, 2, 3, 4, 5];
+final paresAoQuadrado = nums.where((n) =&gt; n.isEven).map((n) =&gt; n * n).toList();</div>
+
+  <div class="ex-title">Classe com factory, getter e encapsulamento</div>
+  <div class="ex-code">class Conta {
+  final String id;
+  double _saldo;
+  Conta(this.id, this._saldo);
+  double get saldo =&gt; _saldo;
+  void depositar(double v) =&gt; _saldo += v;
+  factory Conta.vazia(String id) =&gt; Conta(id, 0);
+}
+final c = Conta.vazia('abc');
+c.depositar(100);</div>
+
+  <div class="ex-title">Assíncrono com async/await</div>
+  <div class="ex-code">Future&lt;String&gt; carregar() async {
+  await Future.delayed(Duration(milliseconds: 100));
+  return 'ok';
+}
+Future<void> main() async {
+  final s = await carregar();
+}</div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
 <!--                        FASE 1                              -->
@@ -1920,7 +2002,14 @@ dev_dependencies:
 </footer>
 
 <script>
-const state = JSON.parse(localStorage.getItem('dart-ex') || '{}');
+let state;
+try {
+  const raw = localStorage.getItem('dart-ex');
+  const parsed = raw ? JSON.parse(raw) : {};
+  state = parsed && typeof parsed === 'object' ? parsed : {};
+} catch (_) {
+  state = {};
+}
 
 function toggleDone(id) {
   const card = document.querySelector(`[data-id="${id}"]`);
@@ -1939,7 +2028,7 @@ function toggleHint(id) {
 }
 
 function updateProgress() {
-  const total = 80;
+  const total = document.querySelectorAll('.ex-card').length;
   const done = Object.values(state).filter(Boolean).length;
   const pct = Math.round((done / total) * 100);
   document.getElementById('prog-fill').style.width = pct + '%';
