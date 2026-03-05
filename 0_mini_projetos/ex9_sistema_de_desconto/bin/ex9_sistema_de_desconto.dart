@@ -45,6 +45,7 @@ void main() {
   valorDesconto = valorCompra * desconto;
   valorFinal = valorCompra - valorDesconto;
 
+  print("Valor da compra: ${valorCompra.toStringAsFixed(2)}");
   print("Desconto aplicado: ${(desconto * 100)}%");
   print("Valor do desconto: ${valorDesconto.toStringAsFixed(2)}");
   print("ValorFinal: ${valorFinal.toStringAsFixed(2)}");
