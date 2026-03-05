@@ -13,8 +13,37 @@
 
 /**
  * EXPLICAÇÃO DO CÓDIGO
- * 
+ * primeiro declarei as variaveis com para separar as suas responsabilidades
+ * depois calculei o total uma vez para que esse código não se repetice 
+ * varias vezes
+ * depois fiz o calculo do valorImposto, valorTotalSemImposto, valorTotalComImposto
+ * por ultimo fiz a exibição de formatada com 2 casas decimais 
  */
 
+import 'dart:io';
+
 void main() {
+  double imposto = 0.18;
+  double valorImposto = 0;
+  int qtdComprada = 0;
+  double valorUnitario = 0;
+  double valorTotalSemImposto = 0;
+  double valorTotalComImposto = 0;
+  double totalCompra = 0;
+
+  print("Qual o valor unitario do produto ?");
+  valorUnitario = double.parse(stdin.readLineSync()!);
+  print("Qual a quantidade comprada ?: ");
+  qtdComprada = int.parse(stdin.readLineSync()!);
+
+  totalCompra = qtdComprada * valorUnitario;
+
+  valorImposto = (totalCompra * imposto);
+  valorTotalSemImposto = totalCompra;
+  valorTotalComImposto = (totalCompra + valorImposto);
+
+  print("Valor total sem imposto: ${valorTotalSemImposto.toStringAsFixed(2)}");
+  print("Valor totoal com imposto: ${valorTotalComImposto.toStringAsFixed(2)}");
+  print("valor do imposto: ${valorImposto.toStringAsFixed(2)}");
+  print("imposto: ${(imposto*100).toStringAsFixed(2)}%");
 }
