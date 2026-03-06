@@ -23,6 +23,7 @@ void main() {
     print(numeroUm * numerodois);
   }
 
+  // ignore: unused_element
   void getOperacao() {
     print("Digite uma opração: ");
     entrada = stdin.readLineSync()!;
