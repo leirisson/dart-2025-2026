@@ -1,5 +1,10 @@
-import 'package:exemplo1_usuarios_unicos/exemplo1_usuarios_unicos.dart' as exemplo1_usuarios_unicos;
+void main() {
+Set<String> usuariosOnline = {};
+  usuariosOnline.add('joao');
+  usuariosOnline.add('maria');
+  usuariosOnline.add('joao'); // será ignorado
 
-void main(List<String> arguments) {
-  print('Hello world: ${exemplo1_usuarios_unicos.calculate()}!');
+
+  print(usuariosOnline);
 }
+
