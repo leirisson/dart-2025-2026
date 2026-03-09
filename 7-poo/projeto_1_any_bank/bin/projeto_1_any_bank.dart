@@ -7,14 +7,11 @@ void main(List<String> arguments) {
   List<Conta> contas = <Conta>[contaMatheus, contaRoberta];
 
   for (Conta conta in contas) {
-    print("");
-    print("=============================");
-    print(conta.titular);
+    conta.imprimirSaldo();
   }
 
+  contaRoberta.receber(5000);
   contaMatheus.receber(500);
-
-
   contaMatheus.enviarDinheiro(150);
 
 }
