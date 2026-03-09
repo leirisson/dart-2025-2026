@@ -1,3 +1,5 @@
+import 'package:projeto_1_any_bank/Conta.dart';
+
 void main(List<String> arguments) {
   Conta contaMatheus = Conta("Matheus", 1000);
   Conta contaRoberta = Conta("Roberta", 2000);
@@ -8,31 +10,13 @@ void main(List<String> arguments) {
     print("");
     print("=============================");
     print(conta.titular);
-    print(conta.saldo);
   }
 
-  receber(contaMatheus, 500);
-  print(contaMatheus.saldo);
-
-  enviarDinheiro(contaMatheus, 150);
-  print(contaMatheus.saldo);
-}
+  contaMatheus.receber(500);
 
 
-
-void receber(Conta conta, double valor){
-  conta.saldo += valor;
-}
-
-void enviarDinheiro(Conta contaOrigem, double valor){
-  contaOrigem.saldo -= valor;
-}
-
-class Conta {
-  String titular;
-  double saldo;
-
-  Conta(this.titular, this.saldo);
-
+  contaMatheus.enviarDinheiro(150);
 
 }
+
+
