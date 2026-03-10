@@ -1,18 +1,19 @@
 import 'package:projeto_1_any_bank/Conta.dart';
 
 void main(List<String> arguments) {
-  Conta contaMatheus = Conta("Matheus", 1000);
-  Conta contaRoberta = Conta("Roberta", 2000);
+  
+  ContaPoupanca contaLeirisson = ContaPoupanca("Leirisson", 1500);
+  ContaCorrente contaMaria = ContaCorrente("Maria", 1000);
 
-  List<Conta> contas = <Conta>[contaMatheus, contaRoberta];
+  List<Conta> contas = <Conta>[contaLeirisson, contaMaria];
 
   for (Conta conta in contas) {
     conta.imprimirSaldo();
   }
 
-  contaRoberta.receber(5000);
-  contaMatheus.receber(500);
-  contaMatheus.enviarDinheiro(150);
+
+  // contaMaria.enviar(1300);
+  // contaLeirisson.enviar(1800);
 
 }
 
