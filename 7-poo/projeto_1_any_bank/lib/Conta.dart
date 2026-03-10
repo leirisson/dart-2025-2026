@@ -34,12 +34,4 @@ class ContaCorrente extends Conta {
   }
 }
 
-class ContaPoupanca extends Conta {
-  double redimento = 0.05;
 
-  ContaPoupanca(super.titular, super._saldo);
-
-  void calculaRedimento(){
-    _saldo += (_saldo * redimento);
-  }
-}
