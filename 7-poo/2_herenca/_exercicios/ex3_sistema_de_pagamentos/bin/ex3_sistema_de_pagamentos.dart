@@ -12,7 +12,7 @@ List<Payment> payments = [
   PixPayment(200, "email@pix.com")
 ];
 
-for (var payment in payments) {
+for (Payment payment in payments) {
   payment.processPayment();
 }
 
