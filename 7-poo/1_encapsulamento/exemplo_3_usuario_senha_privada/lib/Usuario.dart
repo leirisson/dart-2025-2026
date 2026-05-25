@@ -1,7 +1,7 @@
 
 class Usuario {
   String nome;
-  String _senha;
+  final String _senha;
 
   // metodo construtor
   Usuario(this.nome, this._senha);

@@ -11,14 +11,14 @@
 // Valor do imposto (18%)
 // Valor final com imposto
 
-/**
- * EXPLICAÇÃO DO CÓDIGO
- * primeiro declarei as variaveis com para separar as suas responsabilidades
- * depois calculei o total uma vez para que esse código não se repetice 
- * varias vezes
- * depois fiz o calculo do valorImposto, valorTotalSemImposto, valorTotalComImposto
- * por ultimo fiz a exibição de formatada com 2 casas decimais 
- */
+/// EXPLICAÇÃO DO CÓDIGO
+/// primeiro declarei as variaveis com para separar as suas responsabilidades
+/// depois calculei o total uma vez para que esse código não se repetice 
+/// varias vezes
+/// depois fiz o calculo do valorImposto, valorTotalSemImposto, valorTotalComImposto
+/// por ultimo fiz a exibição de formatada com 2 casas decimais 
+library;
+
 
 import 'dart:io';
 

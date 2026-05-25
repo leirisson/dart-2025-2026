@@ -13,15 +13,15 @@ import 'dart:io';
 // Salário final (fixo + comissão)
 
 void main() {
-  double total_venda_mes = 0;
+  double totalVendaMes = 0;
   double salarioFixo = 1500;
   double taxaComissao = 0.05;
   double comissao = 0;
   double salarioComissinaldo = 0;
 
   print("Qual foi é o valor total de vendas do mês ?");
-  total_venda_mes = double.parse(stdin.readLineSync()!);
-  comissao = (total_venda_mes * taxaComissao);
+  totalVendaMes = double.parse(stdin.readLineSync()!);
+  comissao = (totalVendaMes * taxaComissao);
   salarioComissinaldo = (salarioFixo + comissao);
 
   print("Informações do mês");

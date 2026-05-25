@@ -29,7 +29,7 @@ class Account {
     };
   }
 
- copyWith({
+ Account copyWith({
     String? id,
     String? name,
     String? lastName,

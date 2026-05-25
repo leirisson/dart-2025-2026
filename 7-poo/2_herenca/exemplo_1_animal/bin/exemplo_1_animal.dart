@@ -39,7 +39,7 @@ void main(List<String> arguments) {
         print("Pet cadastro com sucesso ✅");
       case '3':
         print("# ANIMAIS CADASTRADOS #");
-        if (animais.length == 0) {
+        if (animais.isEmpty) {
           print("Sem animais cadastrados.");
         } else {
           for (Animal pet in animais) {

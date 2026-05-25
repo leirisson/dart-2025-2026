@@ -5,8 +5,8 @@ import 'dart:convert';
 import '/apiKey.dart';
 
 class AccountService {
-  StreamController<String> _streamController = StreamController<String>();
-  String _url = "https://api.github.com/gists/75075b2ad8f85675a38ffe316c8ead03";
+  final StreamController<String> _streamController = StreamController<String>();
+  final String _url = "https://api.github.com/gists/75075b2ad8f85675a38ffe316c8ead03";
 
   // deixando o get dipononivel
   Stream<String> get streamInfo => _streamController.stream;
@@ -32,7 +32,7 @@ class AccountService {
     return listAccount;
   }
 
-  addAccount(Account account) async {
+  Future<void> addAccount(Account account) async {
     List<Account> listAccounts = await getAll();
     listAccounts.add(account);
 

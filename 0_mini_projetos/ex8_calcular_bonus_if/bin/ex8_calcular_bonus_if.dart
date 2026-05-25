@@ -8,14 +8,12 @@ import 'dart:io';
 // Caso contrário
 // → ganha bônus de 5%
 
-/**
- * EXPLICAÇÃO DA RESOLUÇÃO:
- * DECLARAR AS VARIAVEIS [X]
- * RECEBER O VALOR TOTAL DAS VENDAS DO MES
- * verificar se o valor da venda do mes é maior que 10000 ou menor 
- * para aplicar o bonus e realizar o calculo
- * exibir o resultado formatado pro usuario;
- */
+/// EXPLICAÇÃO DA RESOLUÇÃO:
+/// DECLARAR AS VARIAVEIS [X]
+/// RECEBER O VALOR TOTAL DAS VENDAS DO MES
+/// verificar se o valor da venda do mes é maior que 10000 ou menor 
+/// para aplicar o bonus e realizar o calculo
+/// exibir o resultado formatado pro usuario;
 
 void main() {
   double totalVendasDoMes = 0;

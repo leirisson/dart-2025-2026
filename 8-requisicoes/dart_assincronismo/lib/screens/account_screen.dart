@@ -3,7 +3,7 @@ import 'package:dart_assincronismo/models/account.dart';
 import 'package:dart_assincronismo/services/accountServices.dart';
 
 class AccountScreen {
-  AccountService _accountService = AccountService();
+  final AccountService _accountService = AccountService();
 
   void initializeStream() {
     _accountService.streamInfo.listen((event) {
@@ -47,14 +47,14 @@ class AccountScreen {
     }
   }
 
-  _getAllAccount() async {
+  Future<void> _getAllAccount() async {
     List<Account> listAccount = await AccountService().getAll();
     for(Account account in listAccount){
       print("nome: ${account.name} ${account.lastName} | balance: ${account.balance}");
     }
   }
 
-  _addExampleAccount() async {
+  Future<void> _addExampleAccount() async {
     Account example = Account(
       id: "ID12345",
       name: "Leirisson",

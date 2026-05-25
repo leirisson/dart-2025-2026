@@ -14,17 +14,15 @@ import 'dart:io';
 // valor do desconto
 // valor final a pagar
 
-/**
- * EXPLICAÇÃO:
- * IDENTIFIQUEI QUE PREICISO QUE PRECISAVA ARMAZENAR: valorCompra, desconto, valorDesconto, valorFinal
- * DEPOIS PRECISAVA CAPTURAR A INFORMAÇÃO DO USUARIO, QUE É O VALOR DA COMPRA
- * PARA PODER REALIZAR OS CALCULOS E VERIFICAR SE É PARA APLICAR OS DESCONTOS 
- * COM BASE NO VALOR DA COMPRA
- * VERIFICO SE O VALOR DA COMPRA É COMPATIVEL COM O VALOR ONDE SE APLICA O DESCONTO SE SIM APLICA O DESCONTO
- * CORRETO SE NÃO aplica e exibe uma mensagem
- * calcular o desconto
- * e por ultimo formatar e exibir par ao usuario.
- */
+/// EXPLICAÇÃO:
+/// IDENTIFIQUEI QUE PREICISO QUE PRECISAVA ARMAZENAR: valorCompra, desconto, valorDesconto, valorFinal
+/// DEPOIS PRECISAVA CAPTURAR A INFORMAÇÃO DO USUARIO, QUE É O VALOR DA COMPRA
+/// PARA PODER REALIZAR OS CALCULOS E VERIFICAR SE É PARA APLICAR OS DESCONTOS 
+/// COM BASE NO VALOR DA COMPRA
+/// VERIFICO SE O VALOR DA COMPRA É COMPATIVEL COM O VALOR ONDE SE APLICA O DESCONTO SE SIM APLICA O DESCONTO
+/// CORRETO SE NÃO aplica e exibe uma mensagem
+/// calcular o desconto
+/// e por ultimo formatar e exibir par ao usuario.
 void main() {
   double valorCompra = 0;
   double desconto = 0;
