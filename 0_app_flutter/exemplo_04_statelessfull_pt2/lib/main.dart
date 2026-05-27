@@ -35,6 +35,7 @@ class HomePageState extends State<HomePage> {
       child: Center(
         child: GestureDetector(
           child: Text("Fluterando com Flutter !✅ - $counter"),
+          
           onTap: (){
             setState(() {
               counter++;
